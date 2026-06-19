@@ -12,6 +12,7 @@ define('LBC_EVENTOS_PATH', plugin_dir_path(__FILE__));
 define('LBC_EVENTOS_URL', plugin_dir_url(__FILE__));
 
 require_once LBC_EVENTOS_PATH . 'includes/cpt.php';
+require_once LBC_EVENTOS_PATH . 'includes/shortcode.php';
 
 register_activation_hook(__FILE__, 'lbc_eventos_activate');
 register_deactivation_hook(__FILE__, 'lbc_eventos_deactivate');
@@ -65,3 +66,32 @@ function lbc_eventos_acf_notice()
     }
 }
 add_action('admin_notices', 'lbc_eventos_acf_notice');
+
+/**
+ * Enqueues Bootstrap 5 CSS from CDN on the frontend and custom style.
+ * Used by both the shortcode grid and the single post template.
+ *
+ * @return void
+ */
+function lbc_eventos_enqueue_assets()
+{
+    wp_enqueue_style(
+        'bootstrap-5',
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+        [],
+        '5.3.3'
+    );
+    wp_enqueue_style(
+        'bootstrap-icons',
+        'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css',
+        [],
+        '1.11.3'
+    );
+    wp_enqueue_style(
+        'lbc-eventos',
+        LBC_EVENTOS_URL . 'assets/style.css',
+        [ 'bootstrap-5', 'bootstrap-icons' ],
+        '1.0.0'
+    );
+}
+add_action('wp_enqueue_scripts', 'lbc_eventos_enqueue_assets');
