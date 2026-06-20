@@ -18,7 +18,7 @@ get_header();
                 </div>
             <?php endif; ?>
 
-            <h1 class="mb-3"><?php the_title(); ?></h1>
+            <h1 class="mb-3"><?php echo esc_html(get_the_title()); ?></h1>
 
             <ul class="d-md-flex evento-meta gap-2 list-unstyled">
                 <?php $date = get_field('data_evento'); ?>

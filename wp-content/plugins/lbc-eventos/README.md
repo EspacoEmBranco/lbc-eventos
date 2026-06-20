@@ -22,7 +22,7 @@ Custom WordPress plugin to manage and display events.
 1. Place the `lbc-eventos` folder inside `wp-content/plugins/`
 2. Install and activate the **Advanced Custom Fields** plugin
 3. Activate **LBC Eventos** — the plugin will block activation if ACF is not active
-
+4. Go to **ACF → Field Groups** — a **Sync available** tab will appear. Click it and then click **Import** to load the field group from the plugin's `acf-json/` folder
 
 ## Shortcode usage
 
@@ -37,3 +37,7 @@ Displays all upcoming events in a 3-column grid.
 ```
 
 Limits the output to 6 events.
+
+## Improvements
+
+- **ACF JSON sync** — field group definitions are version-controlled in `acf-json/` using ACF's native JSON sync. Installing the plugin on any environment exposes the field group automatically via the *Sync available* tab, removing the need to recreate fields manually.

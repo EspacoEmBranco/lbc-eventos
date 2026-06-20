@@ -47,9 +47,9 @@ function lbc_eventos_futuros_shortcode($atts)
 
             <?php while ($query->have_posts()) : $query->the_post(); ?>
                 <?php
-                $date = get_field('data_evento');
-                $local       = get_field('local');
-                $org = get_field('organizador');
+                $date  = get_field('data_evento');
+                $local = get_field('local');
+                $org   = get_field('organizador');
                 ?>
 
                 <div class="col">
@@ -65,7 +65,7 @@ function lbc_eventos_futuros_shortcode($atts)
                         <?php endif; ?>
                         <div class="card-body">
                             <h5 class="event-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a>
                             </h5>
                             <?php if ($date) : ?>
                                 <p class="event-date text-muted">

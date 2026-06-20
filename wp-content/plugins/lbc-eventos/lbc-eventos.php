@@ -111,3 +111,26 @@ add_filter('template_include', function ($template) {
     }
     return $template;
 });
+
+/**
+ * Points ACF JSON save path to the plugin's acf-json folder
+ * so field group definitions are version-controlled alongside the plugin.
+ *
+ * @param  string $path Current ACF JSON save path.
+ * @return string
+ */
+add_filter('acf/settings/save_json', function () {
+    return LBC_EVENTOS_PATH . 'acf-json';
+});
+
+/**
+ * Adds the plugin's acf-json folder to ACF's load paths
+ * so committed field groups are automatically synced on activation.
+ *
+ * @param  array $paths Existing ACF JSON load paths.
+ * @return array
+ */
+add_filter('acf/settings/load_json', function ($paths) {
+    $paths[] = LBC_EVENTOS_PATH . 'acf-json';
+    return $paths;
+});
