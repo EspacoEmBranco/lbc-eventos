@@ -55,12 +55,18 @@ function lbc_eventos_futuros_shortcode($atts)
                 <div class="col">
                     <div class="card h-100">
                         <?php if (has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink(); ?>">
+                            <a href="<?php echo esc_url(get_permalink()); ?>">
                                 <img
                                     src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'large')); ?>"
                                     class="card-img-top"
                                     alt="<?php echo esc_attr(get_the_title()); ?>"
                                 >
+                            </a>
+                        <?php else : ?>
+                            <a href="<?php echo esc_url(get_permalink()); ?>">
+                                <div class="card-img-placeholder">
+                                    <i class="bi bi-calendar-event"></i>
+                                </div>
                             </a>
                         <?php endif; ?>
                         <div class="card-body">

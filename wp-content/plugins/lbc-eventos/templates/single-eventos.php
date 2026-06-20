@@ -16,6 +16,12 @@ get_header();
                 <div class="mb-4">
                     <?php the_post_thumbnail('full', [ 'class' => 'evento-featured-img rounded' ]); ?>
                 </div>
+            <?php else : ?>
+                <div class="mb-4">
+                    <div class="evento-img-placeholder rounded">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+                </div>
             <?php endif; ?>
 
             <h1 class="mb-3"><?php echo esc_html(get_the_title()); ?></h1>
