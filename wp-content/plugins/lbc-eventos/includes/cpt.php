@@ -10,17 +10,17 @@ defined('ABSPATH') || exit;
 function lbc_eventos_register_cpt()
 {
     $labels = [
-        'name'               => 'Eventos',
-        'singular_name'      => 'Evento',
-        'add_new'            => 'Adicionar Novo',
-        'add_new_item'       => 'Adicionar Novo Evento',
-        'edit_item'          => 'Editar Evento',
-        'new_item'           => 'Novo Evento',
-        'view_item'          => 'Ver Evento',
-        'search_items'       => 'Pesquisar Eventos',
-        'not_found'          => 'Nenhum evento encontrado',
-        'not_found_in_trash' => 'Nenhum evento encontrado no lixo',
-        'menu_name'          => 'Eventos',
+        'name'               => __( 'Eventos', 'lbc-eventos' ),
+        'singular_name'      => __( 'Evento', 'lbc-eventos' ),
+        'add_new'            => __( 'Adicionar Novo', 'lbc-eventos' ),
+        'add_new_item'       => __( 'Adicionar Novo Evento', 'lbc-eventos' ),
+        'edit_item'          => __( 'Editar Evento', 'lbc-eventos' ),
+        'new_item'           => __( 'Novo Evento', 'lbc-eventos' ),
+        'view_item'          => __( 'Ver Evento', 'lbc-eventos' ),
+        'search_items'       => __( 'Pesquisar Eventos', 'lbc-eventos' ),
+        'not_found'          => __( 'Nenhum evento encontrado', 'lbc-eventos' ),
+        'not_found_in_trash' => __( 'Nenhum evento encontrado no lixo', 'lbc-eventos' ),
+        'menu_name'          => __( 'Eventos', 'lbc-eventos' ),
     ];
 
     register_post_type('eventos', [

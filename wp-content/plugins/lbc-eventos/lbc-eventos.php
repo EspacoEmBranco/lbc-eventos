@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: LBC Eventos
- * Description: Plugin para gerir e apresentar eventos.
+ * Description: Plugin to manage and display custom post type eventos.
  * Version: 1.0.0
  * Author: João Dias
  * Requires at least: 6.0
