@@ -24,12 +24,13 @@ function lbc_eventos_register_cpt()
     ];
 
     register_post_type('eventos', [
-        'labels'      => $labels,
-        'public'      => true,
-        'has_archive' => true,
-        'supports'    => [ 'title', 'editor', 'thumbnail' ],
-        'menu_icon'   => 'dashicons-calendar-alt',
-        'rewrite'     => [ 'slug' => 'eventos' ],
+        'labels'       => $labels,
+        'public'       => true,
+        'has_archive'  => true,
+        'supports'     => [ 'title', 'editor', 'thumbnail' ],
+        'menu_icon'    => 'dashicons-calendar-alt',
+        'rewrite'      => [ 'slug' => 'eventos' ],
+        'show_in_rest' => true,
     ]);
 }
 add_action('init', 'lbc_eventos_register_cpt');

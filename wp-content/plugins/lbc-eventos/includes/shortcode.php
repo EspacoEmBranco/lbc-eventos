@@ -24,6 +24,7 @@ function lbc_eventos_futuros_shortcode($atts)
             'meta_key'       => 'data_evento',
             'orderby'        => 'meta_value',
             'order'          => 'ASC',
+            'no_found_rows'  => true,
             'meta_query'     => [
                 [
                     'key'     => 'data_evento',
@@ -41,7 +42,7 @@ function lbc_eventos_futuros_shortcode($atts)
 
     ob_start();
     ?>
-    <div class="lbc-eventos container">
+    <div class="lbc-eventos-grid container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
 
             <?php while ($query->have_posts()) : $query->the_post(); ?>
@@ -54,11 +55,13 @@ function lbc_eventos_futuros_shortcode($atts)
                 <div class="col">
                     <div class="card h-100">
                         <?php if (has_post_thumbnail()) : ?>
-                            <img
-                                src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'medium')); ?>"
-                                class="card-img-top"
-                                alt="<?php echo esc_attr(get_the_title()); ?>"
-                            >
+                            <a href="<?php the_permalink(); ?>">
+                                <img
+                                    src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'large')); ?>"
+                                    class="card-img-top"
+                                    alt="<?php echo esc_attr(get_the_title()); ?>"
+                                >
+                            </a>
                         <?php endif; ?>
                         <div class="card-body">
                             <h5 class="event-title">

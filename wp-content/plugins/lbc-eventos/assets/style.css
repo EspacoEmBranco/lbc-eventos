@@ -1,33 +1,44 @@
-.lbc-eventos {
+/* Shortcode  */
+.lbc-eventos-grid {
   margin-top: 2rem;
 }
 
-.lbc-eventos .card {
+.lbc-eventos-grid .card {
   transition: box-shadow 0.2s ease;
 }
 
-.lbc-eventos .card:hover {
+.lbc-eventos-grid .card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
-.lbc-eventos .event-title {
+.lbc-eventos-grid .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lbc-eventos-grid .event-title {
   margin: 0;
 }
 
-.lbc-eventos .event-title a {
+.lbc-eventos-grid .card p {
+  cursor: default;
+}
+
+.lbc-eventos-grid .event-title a {
   color: inherit;
   font-size: 1.2rem;
   text-decoration: none;
 }
 
-.lbc-eventos .event-date {
+.lbc-eventos-grid .event-date {
   font-size: 0.9rem;
   font-weight: 600;
   margin: 0.8rem 0 0 0;
 }
 
-.lbc-eventos .event-local,
-.lbc-eventos .event-org {
+.lbc-eventos-grid .event-local,
+.lbc-eventos-grid .event-org {
   font-size: 0.8rem;
   font-weight: 400;
   margin: 0.8rem 0 0 0;
@@ -35,4 +46,41 @@
 
 .no-events-message {
   text-align: center;
+}
+
+/* Single evento */
+.lbc-eventos-single {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+}
+
+.lbc-eventos-single .evento-featured-img {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .lbc-eventos-single .evento-featured-img {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lbc-eventos-single .evento-featured-img {
+    height: 500px;
+  }
+}
+
+.lbc-eventos-single .evento-meta li {
+  cursor: default;
+  margin-bottom: 0.5rem;
+}
+
+.lbc-eventos-single .event-content {
+  border-top: 1px solid #cecece;
+  margin-top: 1rem;
+  padding-top: 1rem;
 }

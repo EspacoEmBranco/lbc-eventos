@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Uninstall routine for LBC Eventos.
  * Runs when the plugin is deleted via the WordPress admin.
  * Removes all Evento posts and their associated metadata.
  */
 
-defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
+defined('WP_UNINSTALL_PLUGIN') || exit;
 
 $eventos = get_posts(
     [
@@ -16,6 +17,6 @@ $eventos = get_posts(
     ]
 );
 
-foreach ( $eventos as $id ) {
-    wp_delete_post( $id, true );
+foreach ($eventos as $id) {
+    wp_delete_post($id, true);
 }

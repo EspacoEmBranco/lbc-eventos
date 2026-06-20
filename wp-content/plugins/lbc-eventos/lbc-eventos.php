@@ -4,6 +4,8 @@
  * Description: Plugin para gerir e apresentar eventos.
  * Version: 1.0.0
  * Author: João Dias
+ * Requires at least: 6.0
+ * Requires PHP:      8.0
  * Text Domain: lbc-eventos
  */
 
@@ -95,3 +97,17 @@ function lbc_eventos_enqueue_assets()
     );
 }
 add_action('wp_enqueue_scripts', 'lbc_eventos_enqueue_assets');
+
+/**
+ * Loads the plugin's single-eventos template for individual Evento posts,
+ * overriding the active theme's default single template.
+ *
+ * @param  string $template Path to the template WordPress resolved.
+ * @return string
+ */
+add_filter('template_include', function ($template) {
+    if (is_singular('eventos')) {
+        return LBC_EVENTOS_PATH . 'templates/single-eventos.php';
+    }
+    return $template;
+});
