@@ -41,3 +41,4 @@ Limits the output to 6 events.
 ## Improvements
 
 - **ACF JSON sync** — field group definitions are version-controlled in `acf-json/` using ACF's native JSON sync. Installing the plugin on any environment exposes the field group automatically via the *Sync available* tab, removing the need to recreate fields manually.
+- **Placeholder image** — events without a featured image display a CSS-only placeholder (no extra assets) in both the grid cards and the single event template, keeping the layout consistent at all times.
